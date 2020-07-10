@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loadingFragment">
+
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.bladez.pokemonlist.fragment.ListFragment"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/action_listFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment"
+            app:enterAnim="@anim/fragment_fast_out_extra_slow_in"
+            app:exitAnim="@anim/fragment_open_enter"
+            app:popEnterAnim="@anim/nav_default_enter_anim"
+            app:popExitAnim="@anim/zoom_in" />
+    </fragment>
+    <fragment
+        android:id="@+id/loadingFragment"
+        android:name="com.bladez.pokemonlist.fragment.LoadingFragment"
+        android:label="fragment_loading"
+        tools:layout="@layout/fragment_loading" >
+        <action
+            android:id="@+id/action_loadingFragment_to_listFragment"
+            app:destination="@id/listFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.bladez.pokemonlist.fragment.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details" />
+</navigation>
